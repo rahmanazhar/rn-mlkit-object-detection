@@ -15,20 +15,22 @@ const defaultOptions = {
 };
 
 // Helper function to unwrap result or reject with error
-const unwrapResult = (res) =>
-  'error' in res ? Promise.reject(res) : res;
+const unwrapResult = (res) => ('error' in res ? Promise.reject(res) : res);
 
 // Function wrapper that handles object detection
 const wrapper = {
-  detectFromUri: (
-    uri,
-    config = defaultOptions
-  ) => {
-    const detectorMode = config.detectorMode === ObjectDetectorMode.STREAM || config.detectorMode === ObjectDetectorMode.SINGLE_IMAGE
-      ? config.detectorMode
-      : defaultOptions.detectorMode;
-    const shouldEnableClassification = config.shouldEnableClassification ? 1 : 0;
-    const shouldEnableMultipleObjects = config.shouldEnableMultipleObjects ? 1 : 0;
+  detectFromUri: (uri, config = defaultOptions) => {
+    const detectorMode =
+      config.detectorMode === ObjectDetectorMode.STREAM ||
+      config.detectorMode === ObjectDetectorMode.SINGLE_IMAGE
+        ? config.detectorMode
+        : defaultOptions.detectorMode;
+    const shouldEnableClassification = config.shouldEnableClassification
+      ? 1
+      : 0;
+    const shouldEnableMultipleObjects = config.shouldEnableMultipleObjects
+      ? 1
+      : 0;
 
     return RNMLKitObjectDetection.detectFromUri(
       uri,
