@@ -1,10 +1,34 @@
 import { NativeModules } from 'react-native';
 const { RNMLKitObjectDetection } = NativeModules;
 
-// ObjectDetectorMode constants
-const ObjectDetectorMode = {
+export const DetectedObjectBounding = {
+  originY: 0,
+  originX: 0,
+  height: 0,
+  width: 0,
+};
+
+export const DetectedObjectLabel = {
+  text: '',
+  confidence: '',
+  index: '',
+};
+
+export const ObjectDetectionResult = {
+  bounding: DetectedObjectBounding,
+  trackingID: '',
+  labels: [],
+};
+
+export const ObjectDetectorMode = {
   STREAM: 0,
   SINGLE_IMAGE: 1,
+};
+
+export const ObjectDetectorOptions = {
+  detectorMode: ObjectDetectorMode.STREAM,
+  shouldEnableClassification: false,
+  shouldEnableMultipleObjects: false,
 };
 
 // Default options configuration
