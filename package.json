@@ -1,6 +1,6 @@
 {
   "name": "rn-mlkit-object-detection",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Standalone MLKit object detection for React Native",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
